@@ -1,0 +1,101 @@
+{% load static%}
+{%load customer_tags%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/f7e44717b5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <link rel="stylesheet" href="{%static './cssCode/log.css'%}" type="text/css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <main>
+            <div class="main_container">
+                <div class="infoComp">
+                    <div class="compName"><a href="{%url 'main'%}"><i class="fa fa-angle-left"></i>crypto</a></div>
+                    <div class="photoCatalog">
+                        <div class="vision">
+                            <div class="slider">
+                                <img src="{%static './photos/nimbMonkey.png' %}" alt="" class="photoSlide">
+                                <img src="{%static './photos/usMonkey.png' %}" alt="" class="photoSlide">
+                                <img src="{%static './photos/nimbMonkey.png' %}" alt="" class="photoSlide">
+                                <img src="{%static './photos/usMonkey.png' %}" alt="" class="photoSlide">
+                            </div>
+                        </div>
+                        <div class="pointers">
+                            <div class="pointItem active point1"></div>
+                            <div class="pointItem point2"></div>
+                            <div class="pointItem point3"></div>
+                            <div class="pointItem point4"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="forma">
+                    <form action="#" method="post">
+                        <fieldset>
+                            <div class="formBlock">
+                                <legend class="capLeg">
+                                    Welcome
+                                </legend>
+                                <h3 class="capCreate">
+                                    Create your account
+                                </h3>
+                                <div class="inputBlock">
+                                    <label for="fullName" class="lab">full name</label>
+                                    <div class="inputContent">
+                                        <input type="text" name="fullName" id="fullName" class="inputTag">
+                                    </div>
+                                </div>
+                                <div class="inputBlock">
+                                    <label for="email" class="lab">email</label>
+                                    <div class="inputContent">
+                                        <input type="text" name="mail" id="email" class="inputTag">
+                                    </div>
+                                </div>
+                                <div class="inputBlock">
+                                    <label for="pass" class="lab">password</label>
+                                    <div class="inputContent">
+                                        <input type="password" name="pass" id="pass" class="inputTag pass">
+                                        <i class="fas fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                                <div class="inputBlock checkPass">
+                                    <label for="repeatpass" class="lab">repeat password</label>
+                                    <div class="inputContent">
+                                        <input type="password" name="repeatpass" id="repeatpass" class="inputTag pass repeat">
+                                        <i class="fas fa-eye-slash"></i>
+                                    </div>
+                                </div>
+                                <div class="checkBlock">
+                                    <div class="checkboxFake">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span class="confirm">I agree terms & conditions</span>
+                                </div>
+                                <button type="submit" id="create" disabled>create an account</button>
+                                <span class="haveAcc">
+                                    Already have an account ? 
+                                    <a href="{%url 'main'%}" class="sign">
+                                        Sign in
+                                    </a>
+                                </span>
+                            </div>
+                        </fieldset>
+                    </form>        
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="{%static './jsCode/slider.js'%}"></script>
+    <script src="{%static './jsCode/registration.js' %}"></script>
+</body>
+</html>

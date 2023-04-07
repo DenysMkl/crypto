@@ -1,0 +1,21 @@
+<div class="light top"></div>
+<header class="header">
+    <div class="header_container">
+        <div class="navbar">
+            <div class="x-menu">
+                <span class="menuLine"></span>
+            </div>
+            <h1 class="nazva">
+                crypto
+            </h1>
+            <ul class="menu">
+                {%for item in menu%}
+                    <li class="itemsOfmenu">{{item}}</li>
+                {%endfor%}
+            </ul>
+            <div class="log itemsOfmenu">
+                <a href="{%url 'login' %}" class="login">Login</a>
+            </div>
+        </div>
+    </div>
+</header>

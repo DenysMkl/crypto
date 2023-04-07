@@ -1,0 +1,167 @@
+{%load static%}
+{%load customer_tags%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static './cssCode/style.css'%}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        {%include './navbar.html'%}
+        <main>
+            <div class="main_container">
+                <section class="trade">
+                    <div class="herosec">
+                        <h1 class="caption">
+                            discover and find rare nfts pictures or games
+                        </h1>
+                        <div class="buttons">
+                            <div class="but grey">sell nfts</div>
+                            <div class="but dark">buy nfts</div>
+                        </div>
+                        
+                    </div>
+                    <div class="images mainImage"><img src="{%static './photos/lionKing.png'%}" alt="lion"></div>
+                </section>
+                <section class="featurred">
+                    <h1 class="feat">featured on</h1>
+                    <ul class="coins">
+                        {%for item in feat%}
+                            <li class="coinsItem">{{item}}</li>
+                        {%endfor%}
+                    </ul>
+                </section>
+                <section class="buyItem">
+                    <div class="images"><img src="{%static './photos/monkey.png'%}" alt="monkey"></div>
+                    <div class="hero2">
+                        <h1 class="buyText">Be one of the first 3 people to buy this <span class="NFT">nft</span></h1>
+                        <h2 class="getBonus">and get a 10$ bonus along with the purchase</h2>
+                        <h1 class="priceOf">the price of</h1>
+                        <div class="discont">
+                            <h1 class="priceOf">this nfts:</h1>
+                            <h1 class="sailPrice">30$</h1>
+                            <img src="{%static './photos/link.png' %}" alt="arrow">
+                            <h1 class="curPrice">18$</h1>
+                        </div>
+                        <div class="buyNow">buy now
+                            <div class="shadowBut"></div>
+                        </div>
+                        <div class="stat">
+                            <h2 class="addstat">collection</h2>
+                            <h2 class="addstat">artists</h2>
+                            <h2 class="addstat">community</h2>
+                            <h2 class="addstat">450k+</h2>
+                            <h2 class="addstat">320k</h2>
+                            <h2 class="addstat">15k</h2>
+                        </div>
+                    </div>
+                </section>
+                <section class="lightsec">
+                    <div class="textSection">
+                        <h1 class="textDescr">carry out the mission find yours now!!</h1>
+                        <div class="viewBut">view our nfts</div>
+                    </div>
+                    <div class="catalog">
+                        <div class="light"></div>
+                        <div class="card rot">
+                            <img src="{%static './photos/usMonkey.png'%}" alt="monkey">
+                            <div class="underPhotoInfo">
+                                <h2 class="sign">monkey</h2>
+                                <div class="collect">
+                                    <h2 class="count">1 <span class="word">of </span>15</h2>
+                                    <div class="buybut">free</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="{%static './photos/nimbMonkey.png'%}" alt="monkey">
+                            <div class="underPhotoInfo">
+                                <h2 class="sign">monkey</h2>
+                                <div class="collect">
+                                    <h2 class="count">1 <span class="word">of </span>100</h2>
+                                    <div class="buybut">free</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="testmonial">
+                    <h2 class="testmon">testmonial</h2>
+                    <h1 class="feedback">read what our client say</h1>
+                    <div class="feedbackCards">
+                        {%for block in feedback%}
+                        <div class="userFeedbackCard">
+                            <img src="{%static './photos/user.png'%}" alt="user" class="userAvatar">
+                            <div class="commentblock">
+                                <h2 class="nickname">{{block.name}}</h2>
+                                <p class="comment">{{block.comment}}</p>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </section>
+                <section class="invite">
+                    <h2 class="partOfUs">be part of the project</h2>
+                    <div class="butBuyIt">buy now</div>
+                </section>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer_container">
+                <ul class="footerContent">
+                    <li class="footerMainItems"><h2>crypto</h2></li>
+                    <li class="footerMainItems">
+                        <h2>nfts</h2>
+                        <ul class="subFootercontent">
+                            <li class="subFooterItem">home</li>
+                            <li class="subFooterItem">about</li>
+                            <li class="subFooterItem">sell nfts</li>
+                            <li class="subFooterItem">buy nfts</li>
+                        </ul>
+                    </li>
+                    <li class="footerMainItems">
+                        <h2>market</h2>
+                        <ul class="subFootercontent">
+                            <li class="subFooterItem">browse nfts</li>
+                            <li class="subFooterItem">buy nfts</li>
+                            <li class="subFooterItem">sell nfts</li>
+                        </ul>
+                    </li>
+                    <li class="footerMainItems">
+                        <h2>contact</h2>
+                        <ul class="subFootercontent">
+                            <li class="subFooterItem">Email</li>
+                            <li class="subFooterItem">LinkedIn</li>
+                            <li class="subFooterItem">Instagram</li>
+                            <li class="subFooterItem">Twitter</li>
+                        </ul>
+                    </li>
+                    <li class="footerMainItems">
+                        <div class="letYourEmail">
+                            <h2>join our newslatter</h2>
+                            <div class="butEmail">
+                                <input type="text" placeholder="your email" class="emailAdress">
+                            <h3 class="subMit">submit</h3>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="{%static './jsCode/script.js'%}"></script>
+    
+</body>
+</html> 

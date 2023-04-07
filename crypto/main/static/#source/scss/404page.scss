@@ -1,0 +1,101 @@
+@mixin flexblock($jus_content, $al_items, $direct: row){
+    display: flex;
+    justify-content: $jus_content;
+    align-items: $al_items;
+    flex-direction: $direct;
+}
+
+@mixin textSet($color, $size, $transform){
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+}
+
+.error_page{
+    position: relative;
+    @include flexblock(space-around, center);
+    .contAboutError{
+        @include flexblock(space-around, flex-start, column);
+        @include textSet(white, 20px, capitalize);
+        font-weight: bold;
+        >*{
+            margin: 20px 0;
+        }
+
+        .notice{
+            font-size: 80px;
+        }
+
+        .unfort{
+            max-width: 300px;
+            line-height: 1.6;
+        }
+
+        .butHome{
+            padding: 32px;
+            background-color: #02061A;
+            font-size: 24px;
+            border-radius: 50px;
+            box-shadow: 0px 8px 4px -2px #4FBBA6;
+        }
+    }
+
+    .error_img{
+        background-image: url("../../photos/ghost404.png");
+        background-size: contain;
+        width: 300px;
+        height: 300px;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        animation-name: flyObj;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        
+        &::after{
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            width: 80%;
+            height: 40px;
+            border-radius: 100%;
+            filter: blur(12px);
+            background-color: rgb(22, 21, 19, .7);
+            
+        }
+    }
+}
+
+@keyframes flyObj{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-30px);
+    }
+}
+
+
+@media (max-width: 767.98px) {
+    .error_page{
+        flex-direction: column-reverse;
+
+        .contAboutError{
+            align-items: center;
+            margin-top: 50px;
+            .notice{
+                font-size: 40px;
+            }
+
+            .unfort{
+                text-align: center;
+            }
+            .err{
+                display: none;
+            }
+        }
+    }
+}

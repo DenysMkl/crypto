@@ -1,0 +1,298 @@
+@mixin flexblock($jus_content, $al_items, $direct: row){
+    display: flex;
+    justify-content: $jus_content;
+    align-items: $al_items;
+    flex-direction: $direct;
+}
+
+@mixin textSet($color, $size, $transform){
+    color: $color;
+    font-size: $size;
+    text-transform: $transform;
+}
+
+*,
+*::before,
+*::after
+{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+ul,
+li,
+ol
+{
+    list-style-type: none;
+}
+
+img
+{
+    vertical-align: top;
+}
+
+html,
+body
+{
+    height: 100vh;
+    line-height: 1;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    background-color: #0C192E;
+}
+
+[class*='_container']
+{
+    max-width: 1140px;
+    margin: 0px auto;
+}
+
+
+.wrapper{
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+main{
+    flex: 1 1 auto;
+    @include flexblock(center, center);
+}
+
+.main_container{
+    @include flexblock(space-around, center);
+    flex: 1 1 auto;
+    background-color: #273D9C;
+    border-radius: 16px;
+    border: 1px solid white;
+}
+
+.infoComp{
+    flex: 1 1 auto;
+    align-self: flex-start;
+    .compName{
+        @include textSet(white, 40px, capitalize);
+        align-self: flex-start;
+        font-weight: bold;
+        margin: 40px 40px;
+        .fa-angle-left{
+            padding: 0 10px;
+        }
+    }
+    @include flexblock(center, center, column);
+    .photoCatalog{
+        @include flexblock(center, center, column);
+        .vision{
+            overflow: hidden;
+            border-radius: 100%;
+            @include flexblock(center, center);
+            .slider{
+                @include flexblock(flex-start, center);
+                width: 280px;
+                .photoSlide{
+                    border-radius: 100%;
+                    padding: 20px;
+                    max-width: 100%;
+                }   
+            }
+        }
+
+        .pointers{
+            @include flexblock(center, center);
+            padding: 16px 0;
+            .pointItem{
+                width: 16px;
+                height: 16px;
+                margin: 0 16px;
+                border-radius: 100%;
+                background-color: #00227B;
+                transition: .5s;
+                &.active{
+                    background-color: #6F74DD;
+                    transform: scale(1.5);
+                    position: relative;
+                    &::after{
+                        width: 6px;
+                        height: 6px;
+                        background-color: #F3F4FC;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        content: "";
+                        border-radius: 100%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.forma{
+    flex: 1 1 auto;
+    padding: 12px 40px;
+
+    .formBlock{
+        @include textSet(white, 16px, none);
+        @include flexblock(center, flex-start, column);
+        .capLeg{
+            font-size: 32px;
+            font-weight: bold;
+            padding: 8px 0;
+            align-self: center;
+        }
+
+        .capCreate{
+            padding: 10px 0;
+            font-weight: bold;
+        }
+
+        > *{
+            margin: 8px 0;
+        }
+
+        .inputBlock{
+            @include flexblock(center, flex-start, column);
+            position: relative;
+            text-transform: capitalize;
+            width: 100%;
+            margin: 16px 0;
+            .lab{
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                transition: .5s;
+                opacity: .5;
+                
+                &.active{
+                    transform: translateY(-36px);
+                    opacity: 1;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                width: 100%;
+                background-color: #595959;
+            }
+
+            .inputContent{
+                @include flexblock(space-around, center);
+                width: 100%;
+                .inputTag{
+                    background-color: transparent;
+                    flex: 1 1 auto;
+                    font-family: 'Outfit', sans-serif;
+                    @include textSet(white, 16px, none);
+                    padding: 8px 0;
+                    outline: 0;
+                    font-weight: bold;
+                }
+                #fullName{
+                    text-transform: capitalize;
+                }
+            }
+        }
+
+        .checkBlock{
+            @include flexblock(center, center);
+            position: relative;
+            .checkboxFake{
+                width: 20px;
+                height: 20px;
+                background-color: whitesmoke;
+                border-radius: 3px;
+                @include flexblock(center, center);
+
+                .fa-check{
+                    opacity: 0;
+                }
+
+                &.active{
+                    background-color: #D0A920;
+                    .fa-check{
+                        opacity: 1;
+                    }
+                }
+            }
+            .confirm{
+                margin: 0 15px;
+            }
+
+        }
+        
+        #create{
+            align-self: center;
+            width: 80%;
+            padding: 16px 0;
+            @include textSet(#D0A920, 16px, capitalize);
+            font-weight: bold;
+            border-radius: 10px;
+            background-color: #27395B;
+            opacity: .5;
+
+            &.active{
+                opacity: 1;
+            }
+        }
+        .haveAcc{
+            align-self: center;
+            font-weight: bold;
+            .sign{
+                color: #D0A920;
+            }
+        }
+    }
+}
+
+@media (max-width: 1087px)
+{
+    [class*='_container']
+    {
+        max-width: 970px;
+    }
+
+}
+
+@media (max-width: 991.98px)
+{
+    [class*='_container']
+    {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    
+    [class*='_container']
+    {
+        max-width: none;
+    }
+}

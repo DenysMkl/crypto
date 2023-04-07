@@ -1,0 +1,435 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  height: 100vh;
+  line-height: 1;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  background-color: #0C192E;
+}
+
+[class*=_container] {
+  max-width: 1140px;
+  margin: 0px auto;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  background-color: #273D9C;
+  border-radius: 16px;
+  border: 1px solid white;
+}
+
+.infoComp {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.infoComp .compName {
+  color: white;
+  font-size: 40px;
+  text-transform: capitalize;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-weight: bold;
+  margin: 40px 40px;
+}
+.infoComp .compName .fa-angle-left {
+  padding: 0 10px;
+}
+.infoComp .photoCatalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.infoComp .photoCatalog .vision {
+  overflow: hidden;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.infoComp .photoCatalog .vision .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 280px;
+}
+.infoComp .photoCatalog .vision .slider .photoSlide {
+  border-radius: 100%;
+  padding: 20px;
+  max-width: 100%;
+}
+.infoComp .photoCatalog .pointers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 16px 0;
+}
+.infoComp .photoCatalog .pointers .pointItem {
+  width: 16px;
+  height: 16px;
+  margin: 0 16px;
+  border-radius: 100%;
+  background-color: #00227B;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.infoComp .photoCatalog .pointers .pointItem.active {
+  background-color: #6F74DD;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  position: relative;
+}
+.infoComp .photoCatalog .pointers .pointItem.active::after {
+  width: 6px;
+  height: 6px;
+  background-color: #F3F4FC;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: "";
+  border-radius: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.forma {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 12px 40px;
+}
+.forma .formBlock {
+  color: white;
+  font-size: 16px;
+  text-transform: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.forma .formBlock .capLeg {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 8px 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+.forma .formBlock .capCreate {
+  padding: 10px 0;
+  font-weight: bold;
+}
+.forma .formBlock > * {
+  margin: 8px 0;
+}
+.forma .formBlock .inputBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  text-transform: capitalize;
+  width: 100%;
+  margin: 16px 0;
+}
+.forma .formBlock .inputBlock .lab {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.5;
+}
+.forma .formBlock .inputBlock .lab.active {
+  -webkit-transform: translateY(-36px);
+          transform: translateY(-36px);
+  opacity: 1;
+}
+.forma .formBlock .inputBlock::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #595959;
+}
+.forma .formBlock .inputBlock .inputContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+.forma .formBlock .inputBlock .inputContent .inputTag {
+  background-color: transparent;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  font-family: "Outfit", sans-serif;
+  color: white;
+  font-size: 16px;
+  text-transform: none;
+  padding: 8px 0;
+  outline: 0;
+  font-weight: bold;
+}
+.forma .formBlock .inputBlock .inputContent #fullName {
+  text-transform: capitalize;
+}
+.forma .formBlock .checkBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+.forma .formBlock .checkBlock .checkboxFake {
+  width: 20px;
+  height: 20px;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.forma .formBlock .checkBlock .checkboxFake .fa-check {
+  opacity: 0;
+}
+.forma .formBlock .checkBlock .checkboxFake.active {
+  background-color: #D0A920;
+}
+.forma .formBlock .checkBlock .checkboxFake.active .fa-check {
+  opacity: 1;
+}
+.forma .formBlock .checkBlock .confirm {
+  margin: 0 15px;
+}
+.forma .formBlock #create {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 80%;
+  padding: 16px 0;
+  color: #D0A920;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #27395B;
+  opacity: 0.5;
+}
+.forma .formBlock #create.active {
+  opacity: 1;
+}
+.forma .formBlock .haveAcc {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-weight: bold;
+}
+.forma .formBlock .haveAcc .sign {
+  color: #D0A920;
+}
+
+@media (max-width: 1087px) {
+  [class*=_container] {
+    max-width: 970px;
+  }
+}
+@media (max-width: 991.98px) {
+  [class*=_container] {
+    max-width: 750px;
+  }
+}
+@media (max-width: 767.98px) {
+  [class*=_container] {
+    max-width: none;
+  }
+}
