@@ -19,6 +19,9 @@ def login(req):
     return render(req, 'main/login.html')
 
 
+def comment(req):
+    return render(req, 'main/comments.html')
+
 def pageError(req, exception):
     return render(req, 'main/404page.html' , context={'menu': menu['menu'],
                                                    'feat': menu['feat']})
